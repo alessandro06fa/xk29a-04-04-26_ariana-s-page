@@ -32,7 +32,10 @@
 <div id="marcadorCumple"></div>
 
 </div>
-
+</div>
+<button id="btnSorpresa" onclick="irAdviento()" style="display:none;">
+Descubrir algo especial 🎁
+</button>
 </div>
 
 <div class="globos">
@@ -45,10 +48,6 @@
 </div>
 
 <h2 id="mensajeCumple" class="mensaje"></h2>
-
-<h1 class="titulo">COMEBACK...</h1>
-
-<div id="contador2" class="contador"></div>
 
 <div class="imagenes">
 
@@ -63,6 +62,27 @@
 <div id="gifCumple"></div>
 
 <script src="script.js"></script>
+
+<script>
+function irAdviento(){
+
+const sonido = new Audio("sounds/fc.mp3")
+sonido.volume = 0.6
+
+sonido.play()
+
+// esperar a que termine el audio
+sonido.onended = () => {
+window.location.href = "adviento.html"
+}
+
+// por si falla (seguridad)
+setTimeout(()=>{
+window.location.href = "adviento.html"
+},3000)
+
+}
+</script>
 
 </body>
 </html>
